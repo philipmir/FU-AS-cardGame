@@ -2,64 +2,157 @@ package com.example.cardgame
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var cardView : TextView
+    lateinit var cardTextView : TextView
+    lateinit var scoreTextView: TextView
+    lateinit var graphicuImageView: ImageView
     lateinit var buttonUp : ImageButton
     lateinit var buttonDown : ImageButton
-    lateinit var showCardView : ImageView
-    lateinit var showCardView2 : ImageView
-    val cardDeck = gameDeck()
 
-    var deckIndex = 0
+
+    var scoreCount = 0
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        cardView = findViewById(R.id.showCardTextView)
+        
+
+        cardTextView = findViewById(R.id.showCardTextView)
+        scoreTextView = findViewById(R.id.scoreTextView)
+        graphicuImageView = findViewById(R.id.graphicImageView)
         buttonUp = findViewById(R.id.imageButtonUp)
         buttonDown = findViewById(R.id.imageButtonDown)
-        showCardView = findViewById<ImageView>(R.id.two_Of_HeartsImageView)
-        showCardView2 = findViewById<ImageView>(R.id.two_Of_SpadesImageView)
+
+
+
+
 
 
 
 
         buttonUp.setOnClickListener {
             showNewCard()
-            showCardView
+            showNewScoreUp()
+
+//            scoreUpdate()
+//            showCardFromList()
+
+
+
         }
 
         buttonDown.setOnClickListener {
             showNewCard()
+            showNewScoreDown()
         }
-
-
-
-
-
-
-
-
-
 
 
 
     }
 
     fun showNewCard() {
-        val card = cardDeck.getNewCard()
-        cardView.text = card
+        val card = cardGraphicSingelton.getNewCard()
+        cardTextView.text = card.card
+
         //     wordIndex++
         //     val word = wordList[wordIndex]
         //     wordView.text = word.english
     }
 
 
+
+    fun showNewScoreUp () {
+        val score = higherGuess()
+        scoreTextView.text = score.toString()
+    }
+    fun showNewScoreDown () {
+        val score = lowerGuess()
+        scoreTextView.text = score.toString()
+    }
+
+    fun higherGuess() : Int {
+        var card = cardGraphicSingelton.getNewCard().index
+
+        if (card >= cardGraphicSingelton.hiddenCardIndexList.lastIndex) {
+            scoreCount++
+        }
+        return scoreCount
+    }
+
+        fun lowerGuess() : Int  {
+            var card = cardGraphicSingelton.getNewCard().index
+
+            if (card <= cardGraphicSingelton.hiddenCardIndexList.lastIndex) {
+                scoreCount++
+            }
+            return scoreCount
+
+
+
+
+
+        //textViewUpdater()
+    }
+//    fun guessLowerOnclick() {
+//        var card = showNewCard()
+//
+//        if (card <= cardGraphicSingelton.hiddenCardList[1].number) {
+//            rightAnswer++
+//        } else {
+//            wrongAnswerLeft--
+//        }
+//        textViewUpdater()
+//    }
+
+
+
+    /*fun scoreUpdate () {
+        var scoreu = cardGraphicSingelton.scoreCount()
+        scoreTextView.text = scoreu.toString()
+    }*/
+
+//    fun showCardFromList () {
+//        var imageu = cardGraphicSingelton.cardList.size
+//        graphicuImageView.setImageResource(imageu)
+//
+//
+//    }
+
+    fun indexCardList () {
+        var index = cardGraphicSingelton.cardList.size
+
+
+    }
 }
+
+
+
+
+/*    fun cardIndexstuff (): Int {
+        val cardIndex = cardGraphicSingelton.cardList.size
+        return cardIndex
+
+    }*/
+
+    /*fun showNewIndex () {
+        val index = cardIndexstuff()
+        scoreTextView.text = index.toString()
+    }*/
+
+
+
+
+
+
+
+
+
