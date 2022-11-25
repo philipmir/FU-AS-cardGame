@@ -33,30 +33,11 @@ class MainActivity : AppCompatActivity() {
 
 
         upImageButton.setOnClickListener {
-            endOfPile()
-
-            fullDeck.pickCard()
-            if (fullDeck.removeCard.index < fullDeck.currentCard2.index){
-                scoreCount++
-            }
-            cardImageView.setImageResource(fullDeck.currentCard2.graphic)
-            scorePrint()
-
-
-
+            checkScoreUp()
         }
 
         downImageButton.setOnClickListener {
-            endOfPile()
-
-            fullDeck.pickCard()
-            if (fullDeck.removeCard.index > fullDeck.currentCard2.index){
-                scoreCount++
-            }
-            cardImageView.setImageResource(fullDeck.currentCard2.graphic)
-            scorePrint()
-
-
+            checkScoreDown()
 
         }
 
@@ -79,6 +60,24 @@ class MainActivity : AppCompatActivity() {
 
 
         }
+
+    fun checkScoreUp () {
+        fullDeck.pickCard()
+        if (fullDeck.removeCard.index < fullDeck.currentCard2.index){
+            scoreCount++
+        }
+        cardImageView.setImageResource(fullDeck.currentCard2.graphic)
+        scorePrint()
+    }
+
+    fun checkScoreDown () {
+        fullDeck.pickCard()
+        if (fullDeck.removeCard.index > fullDeck.currentCard2.index){
+            scoreCount++
+        }
+        cardImageView.setImageResource(fullDeck.currentCard2.graphic)
+        scorePrint()
+    }
 }
 
 
