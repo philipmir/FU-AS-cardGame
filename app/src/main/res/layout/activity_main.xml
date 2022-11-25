@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <ImageButton
-        android:id="@+id/imageButtonUp"
+        android:id="@+id/upImageButton"
         android:layout_width="195dp"
         android:layout_height="199dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,52 +19,64 @@
         app:srcCompat="@drawable/pilupp" />
 
     <ImageButton
-        android:id="@+id/imageButtonDown"
+        android:id="@+id/downImageButton"
         android:layout_width="195dp"
         android:layout_height="199dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageButtonUp"
+        app:layout_constraintStart_toEndOf="@+id/upImageButton"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/pilner" />
 
     <TextView
-        android:id="@+id/showCardTextView"
+        android:id="@+id/scoreTextView"
+        android:layout_width="39dp"
+        android:layout_height="37dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textColor="#FE95D4"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.543"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.105" />
+
+    <ImageView
+        android:id="@+id/cardImageView"
+        android:layout_width="214dp"
+        android:layout_height="285dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.253"
+        app:srcCompat="@drawable/ace_of_clubs" />
+
+    <ImageView
+        android:id="@+id/cooliopinkImageView"
+        android:layout_width="262dp"
+        android:layout_height="106dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.666"
+        app:srcCompat="@drawable/cooliopinkmorecrop" />
+
+    <ImageView
+        android:id="@+id/imageView8"
         android:layout_width="165dp"
-        android:layout_height="52dp"
-        android:text="card here"
-        android:textColor="#054BFB"
-        android:textSize="24sp"
+        android:layout_height="71dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.257" />
-
-    <TextView
-        android:id="@+id/scoreTextView"
-        android:layout_width="170dp"
-        android:layout_height="45dp"
-        android:text="score here"
-        android:textColor="#FF0000"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/showCardTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/graphicImageView"
-        android:layout_width="184dp"
-        android:layout_height="259dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.471"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/showCardTextView"
-        app:layout_constraintVertical_bias="0.121"
-        app:srcCompat="@drawable/ace_of_clubs" />
+        app:layout_constraintVertical_bias="0.003"
+        app:srcCompat="@drawable/scorepinknew" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
