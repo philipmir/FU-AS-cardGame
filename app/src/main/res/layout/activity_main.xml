@@ -32,17 +32,16 @@
 
     <TextView
         android:id="@+id/scoreTextView"
-        android:layout_width="39dp"
-        android:layout_height="37dp"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
         android:fontFamily="sans-serif-smallcaps"
         android:textColor="#FE95D4"
-        android:textSize="20sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.105" />
+        app:layout_constraintVertical_bias="0.101" />
 
     <ImageView
         android:id="@+id/cardImageView"
@@ -65,7 +64,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.666"
+        app:layout_constraintVertical_bias="0.668"
         app:srcCompat="@drawable/cooliopinkmorecrop" />
 
     <ImageView
@@ -76,7 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.003"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/scorepinknew" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
