@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var scoreTextView: TextView
     lateinit var upImageButton: ImageButton
     lateinit var downImageButton: ImageButton
+    lateinit var pinkTextImageView: ImageView
 
     var scoreCount = 0
 
@@ -31,6 +32,12 @@ class MainActivity : AppCompatActivity() {
             scoreTextView = findViewById(R.id.scoreTextView)
             upImageButton = findViewById(R.id.upImageButton)
             downImageButton = findViewById(R.id.downImageButton)
+            pinkTextImageView = findViewById(R.id.pinkTextImageView)
+
+
+
+
+
 
             cardImageView.setImageResource(R.drawable.card_back)
 
@@ -39,60 +46,92 @@ class MainActivity : AppCompatActivity() {
 
 
             upImageButton.setOnClickListener {
-                fullDeck.pickCard()
-                checkScoreUp()
-
-
-
+                if (fullDeck.fullDeckList.size.equals(1)) {
+                    endOfPile()
+                }else {
+                    fullDeck.pickCard()
+                    checkScoreUp()
+                }
             }
 
             downImageButton.setOnClickListener {
-                fullDeck.pickCard()
-                checkScoreDown()
-
-
+                if (fullDeck.fullDeckList.size.equals(1) ) {
+                    endOfPile()
+                }else {
+                    fullDeck.pickCard()
+                    checkScoreDown()
+                }
             }
 
+            cardImageView.setOnClickListener {
+                replayGame()
+                scoreCount = 0
+                scorePrint()
+                cardImageView.setImageResource(R.drawable.card_back)
+                pinkTextImageView.setImageResource(R.drawable.pinktext)
 
+            }
     }
+
 
     fun scorePrint () {
         var score = scoreCount
         scoreTextView.text = score.toString()
     }
 
-//    fun endOfPile() {
-//
-//        if (fullDeck.fullDeck.size.equals(1)) {
-//
-//            fullDeck.replayGame()
-//
-//
-//
-//        }
-//    }
+    fun endOfPile() {
+
+        if (fullDeck.fullDeckList.size.equals(1)) {
+
+            cardImageView.setImageResource(R.drawable.newgamecard)
+
+            pinkTextImageView.setImageResource(R.drawable.gameover)
+
+        }
+    }
 
     fun checkScoreUp () {
 
 
-        if (fullDeck.removeCard.value < fullDeck.currentCard2.value){
+        if (fullDeck.notCurrentCard.value < fullDeck.currentCard.value){
             scoreCount++
         }
-        cardImageView.setImageResource(fullDeck.currentCard2.graphic)
+        cardImageView.setImageResource(fullDeck.currentCard.graphic)
         scorePrint()
         }
 
 
     fun checkScoreDown () {
 
-        if (fullDeck.removeCard.value > fullDeck.currentCard2.value){
+        if (fullDeck.notCurrentCard.value > fullDeck.currentCard.value){
             scoreCount++
         }
-        cardImageView.setImageResource(fullDeck.currentCard2.graphic)
+        cardImageView.setImageResource(fullDeck.currentCard.graphic)
         scorePrint()
     }
 
+    fun replayGame(){
+//        invisPile.add(currentCard)
+
+        fullDeck.fullDeckList.removeAll(fullDeck.fullDeckList)
+        fullDeck.removedCardList.removeAll(fullDeck.removedCardList)
+        fullDeck.invokeCard()
+        fullDeck.fullDeckList.shuffle()
+    }
+
+
+    fun timerStuff () {
+
+
+    }
+
+
+
+
+
+
 }
+
 
 
 

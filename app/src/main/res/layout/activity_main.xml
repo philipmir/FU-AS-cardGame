@@ -56,7 +56,7 @@
         app:srcCompat="@drawable/ace_of_clubs" />
 
     <ImageView
-        android:id="@+id/cooliopinkImageView"
+        android:id="@+id/pinkTextImageView"
         android:layout_width="262dp"
         android:layout_height="106dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -65,7 +65,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.668"
-        app:srcCompat="@drawable/cooliopinkmorecrop" />
+        app:srcCompat="@drawable/pinktext" />
 
     <ImageView
         android:id="@+id/imageView8"
