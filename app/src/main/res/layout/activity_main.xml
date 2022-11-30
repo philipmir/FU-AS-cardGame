@@ -68,7 +68,7 @@
         app:srcCompat="@drawable/pinktext" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/scoreGraphicImageView"
         android:layout_width="165dp"
         android:layout_height="71dp"
         app:layout_constraintBottom_toBottomOf="parent"

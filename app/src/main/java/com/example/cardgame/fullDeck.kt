@@ -1,48 +1,30 @@
 package com.example.cardgame
 
-
-
-
 object fullDeck {
-
 
     var fullDeckList = mutableListOf<Card>()
     var removedCardList = mutableListOf<Card>()
     var invisPile = mutableListOf<Card>()
-
 
     lateinit var  currentCard : Card
     lateinit var notCurrentCard : Card
 
 
     init {
-        invokeCard()
+        invokeCards()
         fullDeckList.shuffle()
-
     }
 
     fun pickCard (): Card {
-
         removedCardList.add(fullDeckList.removeAt(0))
-
         notCurrentCard = removedCardList.last()
-
         currentCard = fullDeckList[0]
-
-//        invisPile.add(removedCard)
 
         return currentCard
     }
 
-//    fun getNewCard(): Card {
-//        var rnd = (0 until fullDeck.size).random()
-//        currentCard = fullDeck[rnd]
-//
-//        return currentCard
-//    }
-
-    fun invokeCard () {
-
+    //invoke cards with a value for comparison
+    fun invokeCards () {
         fullDeckList.add(Card("2c", R.drawable.two_of_clubs, 2))
         fullDeckList.add(Card("2h", R.drawable.two_of_hearts, 2))
         fullDeckList.add(Card("2d", R.drawable.two_of_diamonds, 2))
@@ -95,81 +77,11 @@ object fullDeck {
         fullDeckList.add(Card("Ah", R.drawable.ace_of_hearts, 14))
         fullDeckList.add(Card("Ad", R.drawable.ace_of_diamonds, 14))
         fullDeckList.add(Card("As", R.drawable.ace_of_spades, 14))
-
     }
-
 }
 
 
 
-/*var fullDeck = mutableListOf<ImageView>()
-
-
-fun fullDeckofCards() {
-
-        fullDeck.add(R.drawable.ace_of_clubs)
-        fullDeck.add(R.drawable.ace_of_diamonds)
-        fullDeck.add(R.drawable.ace_of_hearts)
-        fullDeck.add(R.drawable.ace_of_spades)
-        fullDeck.add(R.drawable.ace_of_clubs)
-        fullDeck.add(R.drawable.ace_of_diamonds)
-        fullDeck.add(R.drawable.ace_of_hearts)
-        fullDeck.add(R.drawable.ace_of_spades)
-        fullDeck.add(R.drawable.jack_of_clubs)
-        fullDeck.add(R.drawable.jack_of_diamonds)
-        fullDeck.add(R.drawable.jack_of_hearts)
-        fullDeck.add(R.drawable.jack_of_spades)
-        fullDeck.add(R.drawable.queen_of_clubs)
-        fullDeck.add(R.drawable.queen_of_diamonds)
-        fullDeck.add(R.drawable.queen_of_hearts)
-        fullDeck.add(R.drawable.queen_of_spades)
-        fullDeck.add(R.drawable.king_of_clubs)
-        fullDeck.add(R.drawable.king_of_diamonds)
-        fullDeck.add(R.drawable.king_of_hearts)
-        fullDeck.add(R.drawable.king_of_spades)
-        fullDeck.add(R.drawable.nine_of_clubs)
-        fullDeck.add(R.drawable.nine_of_diamonds)
-        fullDeck.add(R.drawable.nine_of_hearts)
-        fullDeck.add(R.drawable.nine_of_spades)
-        fullDeck.add(R.drawable.eight_of_clubs)
-        fullDeck.add(R.drawable.eight_of_diamonds)
-        fullDeck.add(R.drawable.eight_of_hearts)
-        fullDeck.add(R.drawable.eight_of_spades)
-        fullDeck.add(R.drawable.seven_of_clubs)
-        fullDeck.add(R.drawable.seven_of_diamonds)
-        fullDeck.add(R.drawable.seven_of_hearts)
-        fullDeck.add(R.drawable.seven_of_spades)
-        fullDeck.add(R.drawable.six_of_clubs)
-        fullDeck.add(R.drawable.six_of_diamonds)
-        fullDeck.add(R.drawable.six_of_hearts)
-        fullDeck.add(R.drawable.six_of_spades)
-        fullDeck.add(R.drawable.five_of_clubs)
-        fullDeck.add(R.drawable.five_of_diamonds)
-        fullDeck.add(R.drawable.five_of_hearts)
-        fullDeck.add(R.drawable.five_of_spades)
-        fullDeck.add(R.drawable.four_of_clubs)
-        fullDeck.add(R.drawable.four_of_diamonds)
-        fullDeck.add(R.drawable.four_of_hearts)
-        fullDeck.add(R.drawable.four_of_spades)
-        fullDeck.add(R.drawable.three_of_clubs)
-        fullDeck.add(R.drawable.three_of_diamonds)
-        fullDeck.add(R.drawable.three_of_hearts)
-        fullDeck.add(R.drawable.three_of_spades)
-        fullDeck.add(R.drawable.two_of_clubs)
-        fullDeck.add(R.drawable.two_of_diamonds)
-        fullDeck.add(R.drawable.two_of_hearts)
-        fullDeck.add(R.drawable.two_of_spades)
-
-
-}
-
-
-
-}
-
-private fun <E> MutableList<E>.add(element: Int) {
-
-}*/
 
 
 
